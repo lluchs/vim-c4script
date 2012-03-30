@@ -17,7 +17,7 @@ syntax match c4scriptFormat contained "\v\%(i|(\d+(\.\d+)?)?(d|x|X|s|v))"
 syntax keyword c4scriptConditional if else
 syntax keyword c4scriptRepeat while for in break continue
 syntax keyword c4scriptKeyword private protected public global
-syntax keyword c4scriptKeyword func return
+syntax keyword c4scriptKeyword func this return
 
 " Operators {{{
 " + ++ +=
