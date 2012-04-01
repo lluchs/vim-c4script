@@ -102,23 +102,23 @@ syntax keyword c4scriptTodo contained TODO FIXME XXX
 syntax match c4scriptComment contains=c4scriptTodo "\v//.*$"
 syntax region c4scriptComment contains=c4scriptTodo start=#\v/\*# end=#\*/#
 
-hi link c4scriptStrict        PreProc
-hi link c4scriptInclude       Include
-hi link c4scriptAppendTo      Include
-hi link c4scriptNumber        Number
-hi link c4scriptID            Constant
-hi link c4scriptBoolean       Boolean
-hi link c4scriptString        String
-hi link c4scriptTranslation   SpecialChar
-hi link c4scriptFormat        SpecialChar
-hi link c4scriptKeyword       Keyword
-hi link c4scriptRepeat        Repeat
-hi link c4scriptConditional   Conditional
-hi link c4scriptOperator      Operator
-hi link c4scriptType          Type
-hi link c4scriptFunction      Function
-hi link c4scriptComment       Comment
-hi link c4scriptTodo          Todo
+hi def link c4scriptStrict        PreProc
+hi def link c4scriptInclude       Include
+hi def link c4scriptAppendTo      Include
+hi def link c4scriptNumber        Number
+hi def link c4scriptID            Constant
+hi def link c4scriptBoolean       Boolean
+hi def link c4scriptString        String
+hi def link c4scriptTranslation   SpecialChar
+hi def link c4scriptFormat        SpecialChar
+hi def link c4scriptKeyword       Keyword
+hi def link c4scriptRepeat        Repeat
+hi def link c4scriptConditional   Conditional
+hi def link c4scriptOperator      Operator
+hi def link c4scriptType          Type
+hi def link c4scriptFunction      Function
+hi def link c4scriptComment       Comment
+hi def link c4scriptTodo          Todo
 
 let b:current_syntax = "c4script"
 
