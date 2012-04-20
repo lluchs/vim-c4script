@@ -1,3 +1,6 @@
+au BufNewFile,BufRead DefCore.txt setfiletype c4defcore
+au BufNewFile,BufRead ActMap.txt setfiletype c4actmap
+
 au BufNewFile,BufRead *.c call s:CheckC4Script()
 
 function! s:CheckC4Script()
