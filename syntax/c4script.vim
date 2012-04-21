@@ -52,7 +52,7 @@ syntax keyword c4scriptType int bool id string object array
 " Functions {{{
 syntax keyword c4scriptFunction Abs Angle ArcCos ArcSin BitAnd BoundBy Cos Distance Div DoRGBaValue GetRGBaValue
 syntax keyword c4scriptFunction HSL HSL2RGB HSLa Inside Max Min Mod Mul Pow RGB RGB2HSL
-syntax keyword c4scriptFunction RGBa Random RandomX SetRGBaValue Sin SplitRGBaValue Sqrt Sub Sum Activate Construction
+syntax keyword c4scriptFunction RGBa Random RandomX SetRGBaValue Sin SplitRGBaValue Sqrt Sub Sum Activate
 syntax keyword c4scriptFunction AddEffect ChangeEffect CheckEffect EffectCall EffectVar GetEffect GetEffectCount RemoveEffect Sound SoundLevel EditCursor
 syntax keyword c4scriptFunction ReloadDef ReloadParticle StartScriptProfiler StopScriptProfiler GetActMapVal GetDefCoreVal GetMaterialVal GetObjectInfoCoreVal GetObjectVal GetPlayerInfoCoreVal GetPlayerVal
 syntax keyword c4scriptFunction GetScenarioVal FrameCounter GameOver GetGravity IsNetwork IsNewgfx ResetGamma SetGameSpeed SetGamma SetGravity GetSkyAdjust
@@ -98,27 +98,36 @@ syntax keyword c4scriptFunction PlaceAnimal PlaceVegetation AssignVar C4V_Any C4
 syntax keyword c4scriptFunction DecVar GetType Global GlobalN Inc IncVar IsRef Local LocalN SetGlobal SetLocal SetVar Var VarN
 " }}}
 
+syntax match c4scriptFunctionDefinition contains=c4scriptEngineCalls /\v(func\s+(\&\s*)?)@<=\w+/
+" object calls
+syntax keyword c4scriptEngineCalls contained Initialize Completion Construction Destruction Hit Hit2 Hit3 Grab Grabbed Get Put Damage DeepBreath Incineration IncinerationEx Death Activate Contact_ Control_ Contained_ ControlCommand ControlCommandFinished ControlTransfer UpdateTransferZone MenuQueryCancel IsFulfilled ControlContents Selection CatchBlow QueryCatchBlow LineBreak BuildNeedsMaterial AttachTargetLost CrewSelection GetObject2Drop OnMenuSelection CalcValue CalcDefValue CalcBuyValue CalcSellValue LiftTop Stuck GrabLost Collection Collection2 Departure Ejection Entrance ActivateEntrance RejectCollect RejectEntrance InitializePlayer SellTo Sale Purchase Recruitment RejectTeamSwitch OnTeamSwitch
+" additional scenario calls
+syntax keyword c4scriptEngineCalls contained InitializePlayer OnGameOver
+syntax match c4scriptEngineCalls contained /\v<Script\d+>/
+
 syntax keyword c4scriptTodo contained TODO FIXME XXX
 syntax match c4scriptComment contains=c4scriptTodo "\v//.*$"
 syntax region c4scriptComment contains=c4scriptTodo start=#\v/\*# end=#\*/#
 
-hi def link c4scriptStrict        PreProc
-hi def link c4scriptInclude       Include
-hi def link c4scriptAppendTo      Include
-hi def link c4scriptNumber        Number
-hi def link c4scriptID            Constant
-hi def link c4scriptBoolean       Boolean
-hi def link c4scriptString        String
-hi def link c4scriptTranslation   SpecialChar
-hi def link c4scriptFormat        SpecialChar
-hi def link c4scriptKeyword       Keyword
-hi def link c4scriptRepeat        Repeat
-hi def link c4scriptConditional   Conditional
-hi def link c4scriptOperator      Operator
-hi def link c4scriptType          Type
-hi def link c4scriptFunction      Function
-hi def link c4scriptComment       Comment
-hi def link c4scriptTodo          Todo
+hi def link c4scriptStrict               PreProc
+hi def link c4scriptInclude              Include
+hi def link c4scriptAppendTo             Include
+hi def link c4scriptNumber               Number
+hi def link c4scriptID                   Constant
+hi def link c4scriptBoolean              Boolean
+hi def link c4scriptString               String
+hi def link c4scriptTranslation          SpecialChar
+hi def link c4scriptFormat               SpecialChar
+hi def link c4scriptKeyword              Keyword
+hi def link c4scriptRepeat               Repeat
+hi def link c4scriptConditional          Conditional
+hi def link c4scriptOperator             Operator
+hi def link c4scriptType                 Type
+hi def link c4scriptFunction             Function
+hi def link c4scriptFunctionDefinition   Function
+hi def link c4scriptEngineCalls          Special
+hi def link c4scriptComment              Comment
+hi def link c4scriptTodo                 Todo
 
 let b:current_syntax = "c4script"
 
