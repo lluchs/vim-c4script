@@ -67,7 +67,7 @@ syntax keyword c4scriptFunction COMD_Stop COMD_Up COMD_UpLeft COMD_UpRight Fling
 syntax keyword c4scriptFunction SetComDir SetR SetRDir SetXDir SetYDir SimFlight AddCommand AppendCommand FinishCommand GetCommand SetCommand
 syntax keyword c4scriptFunction GetClrModulation GetColor GetColorDw GetObjectBlitMode GetPortrait GetUnusedOverlayID SetClrModulation SetColor SetColorDw SetGraphics SetObjDrawTransform
 syntax keyword c4scriptFunction SetObjectBlitMode SetPicture SetPortrait Buy CastObjects ComposeContents CreateConstruction CreateContents CreateObject PlaceInMaterial PlaceObjects
-syntax keyword c4scriptFunction Explode RemoveObject Sell Split2Components Collect Contained Contents ContentsCount GrabContents ScrollContents ShiftContents
+syntax keyword c4scriptFunction Explode RemoveObject Sell Split2Components Collect Contents ContentsCount GrabContents ScrollContents ShiftContents
 syntax keyword c4scriptFunction C4D_All C4D_Background C4D_Goal C4D_Knowledge C4D_Living C4D_Object C4D_Parallax C4D_Rule C4D_StaticBack C4D_Structure C4D_Vehicle
 syntax keyword c4scriptFunction GetCategory SetCategory ComponentAll GetComponent SetComponent DeathAnnounce DoBreath GetAlive GetBreath Kill Punch
 syntax keyword c4scriptFunction SetAlive CrewMember DoCrewExp GetCaptain GetController GetCrew GetCrewCount GetCrewEnabled GetCursor GetHiRank GrabObjectInfo
@@ -96,6 +96,7 @@ syntax keyword c4scriptFunction SetPlrShowControlPos SetWealth GainMissionAccess
 syntax keyword c4scriptFunction Smoke GetClimate GetSeason GetTemperature GetWind LaunchLightning SetSeason SetTemperature SetWind LaunchEarthquake LaunchVolcano
 syntax keyword c4scriptFunction PlaceAnimal PlaceVegetation AssignVar C4V_Any C4V_Array C4V_Bool C4V_C4ID C4V_C4Object C4V_Int C4V_String Dec
 syntax keyword c4scriptFunction DecVar GetType Global GlobalN Inc IncVar IsRef Local LocalN SetGlobal SetLocal SetVar Var VarN
+syntax match   c4scriptFunction /\v<Contained>/
 " }}}
 
 syntax match c4scriptFunctionDefinition contains=c4scriptEngineCalls /\v(func\s+(\&\s*)?)@<=\w+/
