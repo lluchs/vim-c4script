@@ -1,0 +1,48 @@
+snippet fxs "Effect Start" !
+func Fx${1:Effect}Start(object target, int effectNum, int temp$2) {
+	if(temp) return;
+	$3
+}
+endsnippet
+
+snippet fxp "Effect Stop" !
+func Fx${1:Effect}Stop(object target, int effectNum, int reason, bool temp) {
+	if(temp) return;
+	$2
+}
+endsnippet
+
+snippet fxt "Effect Timer" !
+func Fx${1:Effect}Timer(object target, int effectNum, int effectTime) {
+	$2
+}
+endsnippet
+
+snippet fxe "Effect Effect" !
+func Fx${1:Effect}Effect(string newEffectName, object target, int effectNum, int newEffectNum$2) {
+	$3
+}
+endsnippet
+
+snippet fxa "Effect Add" !
+func Fx${1:Effect}Add(object target, int effectNum, string newEffectName, int newEffectTimer$2) {
+	$3
+}
+endsnippet
+
+snippet fxd "Effect Damage" !
+func Fx${1:Effect}Damage(object target, int effectNum, int amount, int cause) {
+	$2
+}
+endsnippet
+
+snippet fxv "EffectVar" !
+EffectVar(${1:0}, target, effectNum)$2
+endsnippet
+
+snippet plrl "Player Loop" !b
+for(var count = GetPlayerCount(), i = 0; i < count; i++) {
+	var p = GetPlayerByIndex(i);
+	$1
+}
+endsnippet
