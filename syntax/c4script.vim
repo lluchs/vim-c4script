@@ -50,6 +50,7 @@ syntax keyword c4scriptType var local static const
 syntax keyword c4scriptType int bool id string object array
 
 " Functions {{{
+" documented
 syntax keyword c4scriptFunction Abs Angle ArcCos ArcSin BitAnd BoundBy Cos Distance Div DoRGBaValue GetRGBaValue
 syntax keyword c4scriptFunction HSL HSL2RGB HSLa Inside Max Min Mod Mul Pow RGB RGB2HSL
 syntax keyword c4scriptFunction RGBa Random RandomX SetRGBaValue Sin SplitRGBaValue Sqrt Sub Sum Activate
@@ -97,6 +98,25 @@ syntax keyword c4scriptFunction Smoke GetClimate GetSeason GetTemperature GetWin
 syntax keyword c4scriptFunction PlaceAnimal PlaceVegetation AssignVar C4V_Any C4V_Array C4V_Bool C4V_C4ID C4V_C4Object C4V_Int C4V_String Dec
 syntax keyword c4scriptFunction DecVar GetType Global GlobalN Inc IncVar IsRef Local LocalN SetGlobal SetLocal SetVar Var VarN
 syntax match   c4scriptFunction /\v<Contained>/
+" undocumented
+" GetXVal.c
+syntax keyword c4scriptFunction GetDefCategory GetDefMaxUserSelect GetDefWidth GetDefHeight GetDefOffset GetDefValue GetDefMass GetDefComponents GetDefCollection GetDefFireTop GetDefPlacement GetDefContactIncinerate GetDefBlastIncinerate GetDefBurnTo GetDefBase
+syntax keyword c4scriptFunction GetDefLine GetDefLineConnect GetDefExclusive GetDefPrey GetDefEdible GetDefCrewMember GetDefGrowth GetDefRebuy GetDefConstruction GetDefConstructTo GetDefGrab GetDefGrabPutGet GetDefCollectible GetDefRotate GetDefChop
+syntax keyword c4scriptFunction GetDefFloat GetDefContainBlast GetDefHorizontalFix GetDefBorderBound GetDefLiftTop GetDefUprightAttach GetDefStretchGrowth GetDefBasement GetDefNoBurnDecay GetDefIncompleteActivity GetDefAttractLightning GetDefOversize GetDefFragile GetDefExplosive GetDefProjectile
+syntax keyword c4scriptFunction GetDefNoPushEnter GetDefVehicleControl GetDefNoComponentMass GetDefClosedContainer GetDefSilentCommands GetDefNoComponentMass GetDefNoBurnDamage GetDefTemporaryCrew GetDefSmokeRate GetDefNoBreath GetDefConSizeOff GetDefNoSell GetDefNoFight GetObjOwnMass GetObjFixX
+syntax keyword c4scriptFunction GetObjFixY GetObjWidth GetObjHeight GetObjFireTop GetObjMobile GetObjOnFire GetObjInLiquid GetObjEntranceStatus GetObjPhysicalTemporary GetObjNeedEnergy GetObjActionTime GetObjActionData GetObjPhaseDelay GetObjActionTarget1 GetObjActionTarget2
+syntax keyword c4scriptFunction GetObjPlrViewRange GetPlrClientNr GetPlrClientName GetPlrColor GetPlrWealth GetPlrPoints GetPlrValue GetPlrInitialValue GetPlrValueGain GetPlrObjectsOwned GetScenNoSky GetScenBottomOpen GetScenTopOpen GetScenLeftOpen GetScenRightOpen
+syntax keyword c4scriptFunction GetScenClimate GetScenYearSpeed GetScenRain GetScenWind GetScenLightning GetScenPrecipitation GetScenMeteorite GetScenVolcano GetScenEarthquake GetObjCoreName GetObjCoreDeathMessage GetObjCoreRank GetObjCoreRankName GetObjCoreTypeName GetObjCoreParticipation
+syntax keyword c4scriptFunction GetObjCoreExperience GetObjCoreRounds GetObjCoreDeathCount GetObjCoreBirthday GetObjCoreTotalPlayingTime GetObjCoreRounds GetAge GetPlrCoreName GetPlrCoreComment GetPlrCoreRank GetPlrCoreRankName GetPlrCoreScore GetPlrCoreRounds GetPlrCoreRoundsLost GetPlrCoreTotalPlayingTime
+syntax keyword c4scriptFunction GetPlrCoreColor GetPlrCoreControl GetPlrCorePosition GetPlrCoreJumpAndRunControl GetPlrLRTitle GetPlrLRDate GetPlrLRDuration GetPlrLRWon GetPlrLRScore GetPlrLRFinalScore GetPlrLRTotalScore GetPlrLRBonus GetPlrLRLevel
+" - instable
+syntax keyword c4scriptSpecialFunction GetPlrViewX GetPlrViewY GetPlrFogOfWar GetScenTitle GetScenVersion GetScenMaxPlayer GetScenSaveGame GetScenReplay GetScenFilm GetScenMissionAccess GetScenNetworkGame GetScenNetworkClients GetScenMapWidth GetScenMapHeight GetScenMapZoom
+" FindObject.c
+syntax keyword c4scriptFunction Find_AtRect Find_OnLine Find_ActionTarget2 Find_Controller Find_Layer Find_PathFree Find_PathFreeCheck Sort_Reverse Sort_Multiple Sort_Distance Sort_Random Sort_Speed Sort_Mass Sort_Value Sort_Func
+" Commits.c
+syntax keyword c4scriptFunction SetSpeed Concat Bounce DoWealth RndMakeCrewMember SemiExplode FindDefinition LaunchRain CastObjectsX CastPXSX Tan GetMaterialColorX Visible GetPlayerByName
+" Helpers.c
+syntax keyword c4scriptFunction MessageWindow RemoveAll CastlePanic SetBit GetBit ToggleBit
 " }}}
 
 syntax match c4scriptFunctionDefinition contains=c4scriptEngineCalls /\v(func\s+(\&\s*)?)@<=\w+/
@@ -128,6 +148,7 @@ hi def link c4scriptConditional          Conditional
 hi def link c4scriptOperator             Operator
 hi def link c4scriptType                 Type
 hi def link c4scriptFunction             Function
+hi def link c4scriptSpecialFunction      Special
 hi def link c4scriptFunctionDefinition   Function
 hi def link c4scriptEngineCalls          Special
 hi def link c4scriptComment              Comment
