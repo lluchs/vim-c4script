@@ -102,6 +102,9 @@ syntax match   c4scriptFunction /\v<Contained>/
 syntax match c4scriptFunctionDefinition contains=c4scriptEngineCalls /\v(func\s+(\&\s*)?)@<=\w+/
 " object calls
 syntax keyword c4scriptEngineCalls contained Initialize Completion Construction Destruction Hit Hit2 Hit3 Grab Grabbed Get Put Damage DeepBreath Incineration IncinerationEx Death Activate Contact_ Control_ Contained_ ControlCommand ControlCommandFinished ControlTransfer UpdateTransferZone MenuQueryCancel IsFulfilled ControlContents Selection CatchBlow QueryCatchBlow LineBreak BuildNeedsMaterial AttachTargetLost CrewSelection GetObject2Drop OnMenuSelection CalcValue CalcDefValue CalcBuyValue CalcSellValue LiftTop Stuck GrabLost Collection Collection2 Departure Ejection Entrance ActivateEntrance RejectCollect RejectEntrance InitializePlayer SellTo Sale Purchase Recruitment RejectTeamSwitch OnTeamSwitch
+" control calls
+syntax match c4scriptEngineCalls contained /\v<(Control|Contained)(Left|Up|Right|Down|Dig|Throw)(Single|Double)?>/
+syntax match c4scriptEngineCalls contained /\v<Control(Special2?|Wheel(Up|Down))(Single|Double)?>/
 " additional scenario calls
 syntax keyword c4scriptEngineCalls contained InitializePlayer OnGameOver
 syntax match c4scriptEngineCalls contained /\v<Script\d+>/
