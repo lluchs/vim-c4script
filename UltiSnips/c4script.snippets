@@ -46,3 +46,9 @@ for(var count = GetPlayerCount(), i = 0; i < count; i++) {
 	$1
 }
 endsnippet
+
+snippet coml "Components Loop" !b
+for(var i = 0, comp, num; (comp = GetComponent(0, i, ${1:this})) && (num = GetComponent(comp, i, $1)); i++) {
+	$2
+}
+endsnippet
