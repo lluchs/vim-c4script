@@ -2,6 +2,7 @@ au BufNewFile,BufRead DefCore.txt set filetype=c4defcore
 au BufNewFile,BufRead ActMap.txt set filetype=c4actmap
 au BufNewFile,BufRead Scenario.txt set filetype=c4scenario
 au BufNewFile,BufRead Particle.txt set filetype=c4particle
+au BufNewFile,BufRead Landscape.txt set filetype=c4landscape
 
 au BufNewFile,BufRead *.c call s:CheckC4Script()
 
