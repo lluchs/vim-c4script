@@ -122,6 +122,7 @@ syntax keyword c4scriptFunction MessageWindow RemoveAll CastlePanic SetBit GetBi
 " Constants {{{
 syntax keyword c4scriptConstant GFXOV_MODE_None GFXOV_MODE_Base GFXOV_MODE_Action GFXOV_MODE_Picture GFXOV_MODE_IngamePicture GFXOV_MODE_Object GFXOV_MODE_ExtraGraphics
 syntax keyword c4scriptConstant GFX_Overlay
+syntax keyword c4scriptConstant FX_Call_DmgScript FX_Call_DmgBlast FX_Call_DmgFire FX_Call_DmgChop FX_Call_EngScript FX_Call_EngBlast FX_Call_EngObjHit FX_Call_EngFire FX_Call_EngBaseRefresh FX_Call_EngAsphyxiation FX_Call_EngCorrosion FX_Call_EngStruct FX_Call_EngGetPunched
 " }}}
 
 syntax match c4scriptFunctionDefinition contains=c4scriptEngineCalls /\v(func\s+(\&\s*)?)@<=\w+/
