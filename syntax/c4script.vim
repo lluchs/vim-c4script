@@ -119,6 +119,10 @@ syntax keyword c4scriptFunction SetSpeed Concat Bounce DoWealth RndMakeCrewMembe
 syntax keyword c4scriptFunction MessageWindow RemoveAll CastlePanic SetBit GetBit ToggleBit
 " }}}
 
+" Constants {{{
+syntax keyword c4scriptConstant GFXOV_MODE_None GFXOV_MODE_Base GFXOV_MODE_Action GFXOV_MODE_Picture GFXOV_MODE_IngamePicture GFXOV_MODE_Object GFXOV_MODE_ExtraGraphics
+" }}}
+
 syntax match c4scriptFunctionDefinition contains=c4scriptEngineCalls /\v(func\s+(\&\s*)?)@<=\w+/
 " object calls
 syntax keyword c4scriptEngineCalls contained Initialize Completion Construction Destruction Hit Hit2 Hit3 Grab Grabbed Get Put Damage DeepBreath Incineration IncinerationEx Death Activate Contact_ Control_ Contained_ ControlCommand ControlCommandFinished ControlTransfer UpdateTransferZone MenuQueryCancel IsFulfilled ControlContents Selection CatchBlow QueryCatchBlow LineBreak BuildNeedsMaterial AttachTargetLost CrewSelection GetObject2Drop OnMenuSelection CalcValue CalcDefValue CalcBuyValue CalcSellValue LiftTop Stuck GrabLost Collection Collection2 Departure Ejection Entrance ActivateEntrance RejectCollect RejectEntrance InitializePlayer SellTo Sale Purchase Recruitment RejectTeamSwitch OnTeamSwitch
@@ -138,6 +142,7 @@ hi def link c4scriptInclude              Include
 hi def link c4scriptAppendTo             Include
 hi def link c4scriptNumber               Number
 hi def link c4scriptID                   Constant
+hi def link c4scriptConstant             Constant
 hi def link c4scriptBoolean              Boolean
 hi def link c4scriptString               String
 hi def link c4scriptTranslation          SpecialChar
